@@ -1,0 +1,85 @@
+.widget {
+  width: 800px;
+  height: 600px;
+  background-image: url(img/background.png);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cubes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 612px;
+  height: 408px;
+  font-size: 16px;
+  font-family: Helvetica;
+  color: #ffffff;
+  box-shadow: 3px 3px 10px #000000;
+}
+.city {
+  width: calc(100% / 3);
+  height: calc(100% / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.blue {
+  background-color: #00b4df;
+}
+.green {
+  background-color: #00de89;
+}
+.violet {
+  background-color: #7900f9;
+}
+.yellow {
+  background-color: #e9b828;
+}
+.red {
+  background-color: #f1005c;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.red > .icon {
+  margin-top: 10%;
+}
+.rose {
+  background-color: #d126cd;
+}
+.purple {
+  background-color: #b53355;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: .75em;
+}
+.city-name {
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.daily {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 20%;
+  margin: 5% 0;
+}
+.daily .icon {
+  width: 50%;
+  height: 15%;
+}
+.temp {
+  margin: 0;
+}
+.day {
+  margin: 0;
+}
