@@ -1,8 +1,16 @@
+html, body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+}
 .widget {
-  width: 800px;
-  height: 600px;
+  min-width: 100%;
+  min-height: 100%;
+  flex-grow: 1;
   background-image: url(img/background.png);
-  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,31 +37,54 @@
 .blue {
   background-color: #00b4df;
 }
+.blue .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(7, 150, 202, 0.75));
+}
 .green {
   background-color: #00de89;
+}
+.green .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(38, 184, 85, 0.75));
 }
 .violet {
   background-color: #7900f9;
 }
+.violet .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(52, 24, 239, 0.75));
+}
 .yellow {
   background-color: #e9b828;
 }
+.yellow .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(211, 148, 31, 0.75));
+}
 .red {
   background-color: #f1005c;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }
-.red > .icon {
-  margin-top: 10%;
+.red .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(203, 34, 67, 0.75));
+}
+.with-info {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 .rose {
   background-color: #d126cd;
 }
+.rose .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(155, 45, 177, 0.75));
+}
 .purple {
   background-color: #b53355;
+}
+.purple .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(170, 23, 49, 0.75));
+}
+.info {
   height: 50%;
   width: 100%;
+  margin-top: 10%;
   display: flex;
   justify-content: center;
   font-size: .75em;
@@ -61,25 +92,60 @@
 .city-name {
   color: #ffffff;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
+  text-align: center;
   width: 100%;
+  margin-top: 29px;
+  margin-bottom: 0;
 }
 .daily {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 20%;
-  margin: 5% 0;
 }
-.daily .icon {
-  width: 50%;
-  height: 15%;
-}
-.temp {
+.daily * {
   margin: 0;
 }
-.day {
-  margin: 0;
+.daily * + * {
+  margin-top: 12px;
+}
+.daily .svg-icon {
+  display: block;
+  height: 18px;
+}
+/*styles for icons*/
+.svg-sprite {
+  display: none;
+  overflow: auto;
+}
+.svg-icon {
+  display: inline-block;
+  overflow: auto;
+  fill: #fff;
+  fill-rule: evenodd;
+}
+.rain {
+  width: 91px;
+  height: 76px;
+}
+.fog {
+  width: 82px;
+  height: 76px;
+}
+.sun-cloud {
+  width: 88px;
+  height: 76px;
+}
+.sun-snow {
+  width: 89px;
+  height: 90px;
+}
+.thunderstorm {
+  width: 64px;
+  height: 65px;
+}
+.cloud {
+  width: 88px;
+  height: 89px;
 }
