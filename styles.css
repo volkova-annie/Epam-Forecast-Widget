@@ -1,7 +1,10 @@
+@import url('//fonts.googleapis.com/css?family=Montserrat');
+
 html, body {
   min-width: 100vw;
   min-height: 100vh;
   display: flex;
+  font-family: Montserrat, Helvetica, sans-serif;
 }
 .widget {
   min-width: 100%;
@@ -21,7 +24,6 @@ html, body {
   width: 612px;
   height: 408px;
   font-size: 16px;
-  font-family: Helvetica;
   color: #ffffff;
   box-shadow: 3px 3px 10px #000000;
 }
