@@ -9,27 +9,19 @@ html, body {
 .widget {
   min-width: 100%;
   min-height: 100%;
-  flex-grow: 1;
   background-image: url(img/background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
 }
 .cubes {
+  display: grid;
   color: #ffffff;
   box-shadow: 3px 3px 10px #000000;
-  display: flex;
-  flex-wrap: wrap;
-}
-.city {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 }
 .blue {
   background-color: #00b4df;
@@ -61,11 +53,6 @@ html, body {
 .red .svg-icon {
   filter: drop-shadow(0 1px 0 rgba(203, 34, 67, 0.75));
 }
-.with-info {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-}
 .rose {
   background-color: #d126cd;
 }
@@ -78,27 +65,33 @@ html, body {
 .purple .svg-icon {
   filter: drop-shadow(0 1px 0 rgba(170, 23, 49, 0.75));
 }
-.info {
-  height: 50%;
-  width: 100%;
-  margin-top: 10%;
-  display: flex;
-  justify-content: center;
-  font-size: .75em;
+.city {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
 }
-.city-name {
-  color: #ffffff;
-  font-weight: bold;
+.with-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   text-align: center;
+  justify-items: center;
+}
+.info {
   width: 100%;
-  margin-bottom: 0;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  font-size: .75em;
+  height: 100%;
 }
 .daily {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); ;
   align-items: center;
-  justify-content: center;
-  width: 20%;
+  justify-content: space-between;
+  /*width: 20%;*/
 }
 .daily * {
   margin: 0;
@@ -114,44 +107,17 @@ html, body {
   fill: #fff;
   fill-rule: evenodd;
 }
-.rain {
-  width: 91px;
-  height: 76px;
-}
-.fog {
-  width: 82px;
-  height: 76px;
-}
-.sun-cloud {
-  width: 88px;
-  height: 76px;
-}
-.sun-snow {
-  width: 89px;
-  height: 90px;
-}
-.thunderstorm {
-  width: 64px;
-  height: 65px;
-}
-.cloud {
-  width: 88px;
-  height: 89px;
-}
-
 @media (max-width: 479px) {
   .widget {
     min-width: 312px;
   }
   .cubes {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     width: 312px;
     height: 468px;
     font-size: 12px;
   }
-  .city {
-    width: calc(100% / 2);
-    height: calc(100% / 3);
-  }
   .rain {
     width: calc(91px / 1.5);
     height: calc(76px / 1.5);
@@ -176,27 +142,20 @@ html, body {
     width: calc(88px / 1.5);
     height: calc(89px / 1.5);
   }
-  .daily * + * {
-    margin-top: 8px;
-  }
   .daily .svg-icon {
     display: block;
     height: 12px;
-  }
-  .city-name {
-    margin-top: 10px;
+    width: 30px;
   }
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .cubes {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     width: 408px;
     height: 612px;
     font-size: 16px;
   }
-  .city {
-    width: calc(100% / 2);
-    height: calc(100% / 3);
-  }
   .rain {
     width: 91px;
     height: 76px;
@@ -221,26 +180,19 @@ html, body {
     width: 88px;
     height: 89px;
   }
-  .daily * + * {
-    margin-top: 12px;
-  }
   .daily .svg-icon {
     display: block;
     height: 18px;
-  }
-  .city-name {
-    margin-top: 29px;
+    width: 30px;
   }
 }
 @media (min-width: 768px) {
   .cubes {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     width: 612px;
     height: 408px;
     font-size: 16px;
-  }
-  .city {
-    width: calc(100% / 3);
-    height: calc(100% / 2);
   }
   .rain {
     width: 91px;
@@ -266,59 +218,9 @@ html, body {
     width: 88px;
     height: 89px;
   }
-  .daily * + * {
-    margin-top: 12px;
-  }
   .daily .svg-icon {
     display: block;
     height: 18px;
-  }
-  .city-name {
-    margin-top: 29px;
+    width: 30px;
   }
 }
-/*@media (min-width: 480px) and (max-width: 679px) {
-  .cubes {
-    width: 468px;
-    height: 312px;
-    font-size: 12px;
-  }
-  .city {
-    width: calc(100% / 3);
-    height: calc(100% / 2);
-  }
-  .rain {
-    width: calc(91px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .fog {
-    width: calc(82px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .sun-cloud {
-    width: calc(88px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .sun-snow {
-    width: calc(89px / 1.5);
-    height: calc(90px / 1.5);
-  }
-  .thunderstorm {
-    width: calc(64px / 1.5);
-    height: calc(65px / 1.5);
-  }
-  .cloud {
-    width: calc(88px / 1.5);
-    height: calc(89px / 1.5);
-  }
-  .daily * + * {
-    margin-top: 8px;
-  }
-  .daily .svg-icon {
-    display: block;
-    height: 12px;
-  }
-  .city-name {
-    margin-top: 10px;
-  }
-}*/
