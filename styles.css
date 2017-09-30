@@ -139,6 +139,99 @@ html, body {
   height: 89px;
 }
 
+@media (max-width: 479px) {
+  .widget {
+    min-width: 312px;
+  }
+  .cubes {
+    width: 312px;
+    height: 468px;
+    font-size: 12px;
+  }
+  .city {
+    width: calc(100% / 2);
+    height: calc(100% / 3);
+  }
+  .rain {
+    width: calc(91px / 1.5);
+    height: calc(76px / 1.5);
+  }
+  .fog {
+    width: calc(82px / 1.5);
+    height: calc(76px / 1.5);
+  }
+  .sun-cloud {
+    width: calc(88px / 1.5);
+    height: calc(76px / 1.5);
+  }
+  .sun-snow {
+    width: calc(89px / 1.5);
+    height: calc(90px / 1.5);
+  }
+  .thunderstorm {
+    width: calc(64px / 1.5);
+    height: calc(65px / 1.5);
+  }
+  .cloud {
+    width: calc(88px / 1.5);
+    height: calc(89px / 1.5);
+  }
+  .daily * + * {
+    margin-top: 8px;
+  }
+  .daily .svg-icon {
+    display: block;
+    height: 12px;
+  }
+  .city-name {
+    margin-top: 10px;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .cubes {
+    width: 408px;
+    height: 612px;
+    font-size: 16px;
+  }
+  .city {
+    width: calc(100% / 2);
+    height: calc(100% / 3);
+  }
+  .rain {
+    width: 91px;
+    height: 76px;
+  }
+  .fog {
+    width: 82px;
+    height: 76px;
+  }
+  .sun-cloud {
+    width: 88px;
+    height: 76px;
+  }
+  .sun-snow {
+    width: 89px;
+    height: 90px;
+  }
+  .thunderstorm {
+    width: 64px;
+    height: 65px;
+  }
+  .cloud {
+    width: 88px;
+    height: 89px;
+  }
+  .daily * + * {
+    margin-top: 12px;
+  }
+  .daily .svg-icon {
+    display: block;
+    height: 18px;
+  }
+  .city-name {
+    margin-top: 29px;
+  }
+}
 @media (min-width: 768px) {
   .cubes {
     width: 612px;
@@ -184,52 +277,7 @@ html, body {
     margin-top: 29px;
   }
 }
-@media (min-width: 680px) and (max-width: 767px) {
-  .cubes {
-    width: 408px;
-    height: 612px;
-    font-size: 16px;
-  }
-  .city {
-    width: calc(100% / 2);
-    height: calc(100% / 3);
-  }
-  .rain {
-    width: 91px;
-    height: 76px;
-  }
-  .fog {
-    width: 82px;
-    height: 76px;
-  }
-  .sun-cloud {
-    width: 88px;
-    height: 76px;
-  }
-  .sun-snow {
-    width: 89px;
-    height: 90px;
-  }
-  .thunderstorm {
-    width: 64px;
-    height: 65px;
-  }
-  .cloud {
-    width: 88px;
-    height: 89px;
-  }
-  .daily * + * {
-    margin-top: 12px;
-  }
-  .daily .svg-icon {
-    display: block;
-    height: 18px;
-  }
-  .city-name {
-    margin-top: 29px;
-  }
-}
-@media (min-width: 480px) and (max-width: 679px) {
+/*@media (min-width: 480px) and (max-width: 679px) {
   .cubes {
     width: 468px;
     height: 312px;
@@ -273,49 +321,4 @@ html, body {
   .city-name {
     margin-top: 10px;
   }
-}
-@media (max-width: 479px) {
-  .cubes {
-    width: 312px;
-    height: 468px;
-    font-size: 12px;
-  }
-  .city {
-    width: calc(100% / 2);
-    height: calc(100% / 3);
-  }
-  .rain {
-    width: calc(91px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .fog {
-    width: calc(82px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .sun-cloud {
-    width: calc(88px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .sun-snow {
-    width: calc(89px / 1.5);
-    height: calc(90px / 1.5);
-  }
-  .thunderstorm {
-    width: calc(64px / 1.5);
-    height: calc(65px / 1.5);
-  }
-  .cloud {
-    width: calc(88px / 1.5);
-    height: calc(89px / 1.5);
-  }
-  .daily * + * {
-    margin-top: 8px;
-  }
-  .daily .svg-icon {
-    display: block;
-    height: 12px;
-  }
-  .city-name {
-    margin-top: 10px;
-  }
-}
+}*/
