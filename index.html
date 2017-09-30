@@ -4,65 +4,62 @@
   <meta charset="UTF-8">
   <title>Forecast Widget</title>
   <link rel="stylesheet" href="normalize.css" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-  <div class="widget container">
-    <div class="row cubes">
-      <div class="col-md-4 col-sm-6 col-6 city blue">
+  <div class="widget">
+    <div class="cubes">
+      <div class="city blue">
         <svg class="svg-icon rain">
           <use xlink:href="#rain" />
         </svg>
         <p class="city-name">CHICAGO / 23&deg;</p>
-        </div>
-      <div class="col-md-4 col-sm-6 col-6 city green">
+      </div>
+      <div class="city green">
         <svg class="svg-icon fog">
           <use xlink:href="#fog" />
         </svg>
         <p class="city-name">SEATTLE / 34&deg;</p>
       </div>
-      <div class="col-md-4 col-sm-6 col-6 city violet">
+      <div class="city violet">
         <svg class="svg-icon sun-cloud">
           <use xlink:href="#sun-cloud" />
         </svg>
         <p class="city-name">BROOKLYN / 55&deg;</p>
       </div>
-      <div class="col-md-4 col-sm-6 col-6 city yellow">
+      <div class="city yellow">
         <svg class="svg-icon sun-snow">
           <use xlink:href="#sun-snow" />
         </svg>
         <p class="city-name">PORTLAND / 27&deg;</p>
       </div>
-      <div class="col-md-4 col-sm-6 col-6 city red with-info">
-        <div class="row">
+      <div class="city red with-info">
         <svg class="svg-icon thunderstorm">
           <use xlink:href="#thunderstorm" />
         </svg>
-      </div>
-        <div class="purple info row">
-          <div class="col-sm-3 col-3 daily">
+        <div class="purple info">
+          <div class="daily">
             <p class="day">MON</p>
             <svg class="svg-icon rain">
               <use xlink:href="#rain" />
             </svg>
             <p class="temp">22&deg;</p>
           </div>
-          <div class="col-sm-3 col-3 daily">
+          <div class="daily">
             <p class="day">TUE</p>
             <svg class="svg-icon rain">
               <use xlink:href="#rain" />
             </svg>
             <p class="temp">19&deg;</p>
           </div>
-          <div class="col-sm-3 col-3 daily">
+          <div class="daily">
             <p class="day">WED</p>
             <svg class="svg-icon cloud">
               <use xlink:href="#cloud" />
             </svg>
             <p class="temp">18&deg;</p>
           </div>
-          <div class="col-sm-3 col-3 daily">
+          <div class="daily">
             <p class="day">THU</p>
             <svg class="svg-icon sun-cloud">
               <use xlink:href="#sun-cloud" />
@@ -71,7 +68,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-6 col-6 city rose">
+      <div class="city rose">
         <svg class="svg-icon cloud">
           <use xlink:href="#cloud" />
         </svg>

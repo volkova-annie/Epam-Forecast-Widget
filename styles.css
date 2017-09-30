@@ -1,34 +1,30 @@
 @import url('//fonts.googleapis.com/css?family=Montserrat');
 
 html, body {
-  min-width: 100vw;
-  min-height: 100vh;
   width: 100%;
   height: 100%;
   font-family: Montserrat, Helvetica, sans-serif;
 }
 .widget {
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: relative;
   background-image: url(img/background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .cubes {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   color: #ffffff;
   box-shadow: 3px 3px 10px #000000;
-  text-align: center;
+  clear: both;
 }
 .city {
-  display: flex;*/
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  float: left;
+  text-align: center;
 }
 .blue {
   background-color: #00b4df;
@@ -60,6 +56,9 @@ html, body {
 .red .svg-icon {
   filter: drop-shadow(0 1px 0 rgba(203, 34, 67, 0.75));
 }
+.with-info {
+  position: relative;
+}
 .rose {
   background-color: #d126cd;
 }
@@ -72,14 +71,30 @@ html, body {
 .purple .svg-icon {
   filter: drop-shadow(0 1px 0 rgba(170, 23, 49, 0.75));
 }
-.with-info {
-  display: flex;
-  align-items: flex-end;
-}
 .info {
   height: 50%;
+  width: 100%;
+  margin-top: 10%;
+  position: absolute;
+  bottom: 0;
   font-size: .75em;
 }
+.city-name {
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0;
+}
+.daily {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+.daily .svg-icon {
+  display: inherit;
+}
+/*styles for icons*/
 .svg-sprite {
   display: none;
   overflow: auto;
@@ -89,33 +104,9 @@ html, body {
   overflow: auto;
   fill: #fff;
   fill-rule: evenodd;
+  margin-top: 25px;
 }
-.rain {
-  width: 91px;
-  height: 76px;
-}
-.fog {
-  width: 82px;
-  height: 76px;
-}
-.sun-cloud {
-  width: 88px;
-  height: 76px;
-}
-.sun-snow {
-  width: 89px;
-  height: 90px;
-}
-.thunderstorm {
-  width: 64px;
-  height: 65px;
-}
-.cloud {
-  width: 88px;
-  height: 89px;
-}
-
-@media (max-width: 575px) {
+@media (max-width: 479px) {
   .widget {
     min-width: 312px;
   }
@@ -123,6 +114,8 @@ html, body {
     width: 312px;
     height: 468px;
     font-size: 12px;
+    margin-top: calc(-468px / 2);
+    margin-left: calc(-312px / 2);
   }
   .city {
     width: calc(100% / 2);
@@ -152,22 +145,24 @@ html, body {
     width: calc(88px / 1.5);
     height: calc(89px / 1.5);
   }
-  .daily p {
+  .daily * + * {
     margin-top: 8px;
   }
   .daily .svg-icon {
-    width: 12px;
     height: 12px;
+    width: 12px;
   }
   .city-name {
     margin-top: 10px;
   }
 }
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 480px) and (max-width: 767px) {
   .cubes {
     width: 408px;
     height: 612px;
     font-size: 16px;
+    margin-top: calc(-612px / 2);
+    margin-left: calc(-408px / 2);
   }
   .city {
     width: calc(100% / 2);
@@ -197,15 +192,15 @@ html, body {
     width: 88px;
     height: 89px;
   }
-  .daily p {
-    margin-top: 8px;
+  .daily * + * {
+    margin-top: 12px;
   }
   .daily .svg-icon {
-    width: 12px;
-    height: 12px;
+    height: 18px;
+    width: 18px;
   }
   .city-name {
-    margin-top: 10px;
+    margin-top: 29px;
   }
 }
 @media (min-width: 768px) {
@@ -213,6 +208,8 @@ html, body {
     width: 612px;
     height: 408px;
     font-size: 16px;
+    margin-top: calc(-408px / 2);
+    margin-left: calc(-612px / 2);
   }
   .city {
     width: calc(100% / 3);
@@ -242,11 +239,14 @@ html, body {
     width: 88px;
     height: 89px;
   }
-  .daily .svg-icon {
-    width: 18px;
-    height: 18px;
-  }
-  .daily p {
+  .daily * + * {
     margin-top: 12px;
+  }
+  .daily .svg-icon {
+    height: 18px;
+    width: 18px;
+  }
+  .city-name {
+    margin-top: 29px;
   }
 }
