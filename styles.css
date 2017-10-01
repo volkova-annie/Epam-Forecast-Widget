@@ -21,6 +21,7 @@ html, body {
   color: #ffffff;
   box-shadow: 3px 3px 10px #000000;
   clear: both;
+  font-size: 16px;
 }
 .city {
   float: left;
@@ -85,6 +86,7 @@ html, body {
   text-align: center;
   width: 100%;
   margin-bottom: 0;
+  margin-top: 29px;
 }
 .daily {
   width: 20%;
@@ -106,61 +108,59 @@ html, body {
   fill-rule: evenodd;
   margin-top: 25px;
 }
+.rain {
+  width: 91px;
+  height: 76px;
+}
+.fog {
+  width: 82px;
+  height: 76px;
+}
+.sun-cloud {
+  width: 88px;
+  height: 76px;
+}
+.sun-snow {
+  width: 89px;
+  height: 90px;
+}
+.thunderstorm {
+  width: 64px;
+  height: 65px;
+}
+.cloud {
+  width: 88px;
+  height: 89px;
+}
+.daily * + * {
+  margin-top: 12px;
+}
+.daily .svg-icon {
+  height: 18px;
+  width: 18px;
+}
+
 @media (max-width: 479px) {
   .widget {
-    min-width: 312px;
+    min-width: 204px;
+    min-height: calc(204px * 6);
+    padding: 30px 0;
   }
   .cubes {
-    width: 312px;
-    height: 468px;
-    font-size: 12px;
-    margin-top: calc(-468px / 2);
-    margin-left: calc(-312px / 2);
+    width: 204px;
+    height: calc(204px * 6);
+    margin-top: calc(-1224px / 2);
+    margin-left: calc(-204px / 2);
   }
   .city {
-    width: calc(100% / 2);
-    height: calc(100% / 3);
-  }
-  .rain {
-    width: calc(91px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .fog {
-    width: calc(82px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .sun-cloud {
-    width: calc(88px / 1.5);
-    height: calc(76px / 1.5);
-  }
-  .sun-snow {
-    width: calc(89px / 1.5);
-    height: calc(90px / 1.5);
-  }
-  .thunderstorm {
-    width: calc(64px / 1.5);
-    height: calc(65px / 1.5);
-  }
-  .cloud {
-    width: calc(88px / 1.5);
-    height: calc(89px / 1.5);
-  }
-  .daily * + * {
-    margin-top: 8px;
-  }
-  .daily .svg-icon {
-    height: 12px;
-    width: 12px;
-  }
-  .city-name {
-    margin-top: 10px;
+    width: 100%;
+    height: 204px;
   }
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .cubes {
     width: 408px;
     height: 612px;
-    font-size: 16px;
     margin-top: calc(-612px / 2);
     margin-left: calc(-408px / 2);
   }
@@ -168,85 +168,16 @@ html, body {
     width: calc(100% / 2);
     height: calc(100% / 3);
   }
-  .rain {
-    width: 91px;
-    height: 76px;
-  }
-  .fog {
-    width: 82px;
-    height: 76px;
-  }
-  .sun-cloud {
-    width: 88px;
-    height: 76px;
-  }
-  .sun-snow {
-    width: 89px;
-    height: 90px;
-  }
-  .thunderstorm {
-    width: 64px;
-    height: 65px;
-  }
-  .cloud {
-    width: 88px;
-    height: 89px;
-  }
-  .daily * + * {
-    margin-top: 12px;
-  }
-  .daily .svg-icon {
-    height: 18px;
-    width: 18px;
-  }
-  .city-name {
-    margin-top: 29px;
-  }
 }
 @media (min-width: 768px) {
   .cubes {
     width: 612px;
     height: 408px;
-    font-size: 16px;
     margin-top: calc(-408px / 2);
     margin-left: calc(-612px / 2);
   }
   .city {
     width: calc(100% / 3);
     height: calc(100% / 2);
-  }
-  .rain {
-    width: 91px;
-    height: 76px;
-  }
-  .fog {
-    width: 82px;
-    height: 76px;
-  }
-  .sun-cloud {
-    width: 88px;
-    height: 76px;
-  }
-  .sun-snow {
-    width: 89px;
-    height: 90px;
-  }
-  .thunderstorm {
-    width: 64px;
-    height: 65px;
-  }
-  .cloud {
-    width: 88px;
-    height: 89px;
-  }
-  .daily * + * {
-    margin-top: 12px;
-  }
-  .daily .svg-icon {
-    height: 18px;
-    width: 18px;
-  }
-  .city-name {
-    margin-top: 29px;
   }
 }
