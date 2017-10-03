@@ -92,7 +92,6 @@ html, body {
   grid-template-rows: repeat(3, 1fr); ;
   align-items: center;
   justify-content: space-between;
-  width: 20%;
 }
 .daily * {
   margin: 0;
@@ -137,7 +136,7 @@ html, body {
 .daily .svg-icon {
   height: 18px;
   display: block;
-  width: 30px;
+  width: 100%;
 }
 
 @media (max-width: 479px) {
