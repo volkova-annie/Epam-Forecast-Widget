@@ -137,13 +137,18 @@ function renderForecast(forecast) {
     const li = document.createElement('li');
     li.className = 'js-forecast-item cube';
     const day = weekdays[new Date(el.dt*1000).getDay()];
+    const dd = (new Date(el.dt*1000).getDate() < 10) ? '0' + new Date(el.dt*1000).getDate() : new Date(el.dt*1000).getDate();
+    const mm = (new Date(el.dt*1000).getMonth() < 10) ? '0' + new Date(el.dt*1000).getMonth() : new Date(el.dt*1000).getMonth();
+    const date = dd + '.' + mm;
+    const description = el.weather[0].main;
     const temp = el.temp.day.toFixed();
     const icon = el.weather[0].icon;
     const template = `<div class="cube__content">
+        <span class="day">${date} / ${day}</span>
         <svg class="svg-icon is-${icon}">
           <use xlink:href="#${icon}" />
         </svg>
-        <span class="day">${day} / ${temp}&deg;</p>
+        <span class="day">${temp}&deg;C / ${description}</span>
       </div>`;
 
     li.innerHTML = template;
