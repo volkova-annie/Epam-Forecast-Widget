@@ -66,14 +66,14 @@ function httpRequest(url, callback) {
       }
     }
   }
-}
+};
 
 
 function getSuggestions(value) {
   const url = `http://gd.geobytes.com/AutoCompleteCity?q=${value}`;
 
   httpRequest(url, renderSuggestions);
-}
+};
 
 function getSuggestionItem(event) {
   const target = event.target;
@@ -81,7 +81,7 @@ function getSuggestionItem(event) {
   if (target.nodeName === 'LI') {
     setSuggestionValue(target.innerText);
   }
-}
+};
 
 function renderSuggestions (cities) {
   const suggestions = document.querySelector('.js-suggestions');
@@ -104,7 +104,7 @@ function renderSuggestions (cities) {
   suggestions.appendChild(ul);
   suggestions.removeEventListener('click', getSuggestionItem);
   suggestions.addEventListener('click', getSuggestionItem);
-}
+};
 
 function setSuggestionValue(city) {
   const suggestions = document.querySelector('.js-suggestions');
@@ -114,7 +114,7 @@ function setSuggestionValue(city) {
   input.value = city;
 
   getForeCast(city);
-}
+};
 
 function getForeCast(city) {
   const suggestions = document.querySelector('.js-suggestions');
@@ -124,7 +124,7 @@ function getForeCast(city) {
   const url = `//api.openweathermap.org/data/2.5/forecast/daily?appid=${key}&q=${city}&units=metric&cnt=${cnt}`;
 
   httpRequest(url, renderForecast);
-}
+};
 
 function renderForecast(forecast) {
   const ul = document.createElement('ul');
@@ -152,4 +152,4 @@ function renderForecast(forecast) {
 
   weatherForecast.innerHTML = '';
   weatherForecast.appendChild(ul);
-}
+};
