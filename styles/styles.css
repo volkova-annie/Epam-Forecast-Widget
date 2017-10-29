@@ -1,0 +1,172 @@
+@import url('//fonts.googleapis.com/css?family=Montserrat');
+
+html, body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  font-family: Montserrat, Helvetica, sans-serif;
+}
+.widget {
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+#forecast {
+  position: absolute;
+  top: 10%;
+}
+.cubes {
+  display: grid;
+  color: #ffffff;
+  box-shadow: 3px 3px 10px #000000;
+}
+.cube:nth-child(7n) {
+  background-color: #00b4df;
+}
+.cube:nth-child(7n) .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(7, 150, 202, 0.75));
+}
+.cube:nth-child(7n-1) {
+  background-color: #00de89;
+}
+.cube:nth-child(7n-1) .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(38, 184, 85, 0.75));
+}
+.cube:nth-child(7n-2) {
+  background-color: #7900f9;
+}
+.cube:nth-child(7n-2) .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(52, 24, 239, 0.75));
+}
+.cube:nth-child(7n-3) {
+  background-color: #e9b828;
+}
+.cube:nth-child(7n-3) .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(211, 148, 31, 0.75));
+}
+.cube:nth-child(7n-4) {
+  background-color: #f1005c;
+}
+.cube:nth-child(7n-4) .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(203, 34, 67, 0.75));
+}
+.cube:nth-child(7n-5) {
+  background-color: #d126cd;
+}
+.cube:nth-child(7n-5) .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(155, 45, 177, 0.75));
+}
+.cube:nth-child(7n-6) {
+  background-color: #b53355;
+}
+.cube:nth-child(7n-6) .svg-icon {
+  filter: drop-shadow(0 1px 0 rgba(170, 23, 49, 0.75));
+}
+.city {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+.with-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  text-align: center;
+  justify-items: center;
+}
+.info {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-around;
+  font-size: .75em;
+  height: 100%;
+}
+.daily {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); ;
+  align-items: center;
+  justify-content: space-between;
+}
+.daily * {
+  margin: 0;
+}
+.daily * + * {
+}
+/*styles for icons*/
+.svg-sprite {
+  display: none;
+  overflow: auto;
+}
+.svg-icon {
+  display: inline-block;
+  overflow: auto;
+  fill: #fff;
+  fill-rule: evenodd;
+}
+.rain {
+  width: 91px;
+  height: 76px;
+}
+.fog {
+  width: 82px;
+  height: 76px;
+}
+.sun-cloud {
+  width: 88px;
+  height: 76px;
+}
+.sun-snow {
+  width: 89px;
+  height: 90px;
+}
+.thunderstorm {
+  width: 64px;
+  height: 65px;
+}
+.cloud {
+  width: 88px;
+  height: 89px;
+}
+.daily .svg-icon {
+  height: 18px;
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 479px) {
+  .widget {
+    min-width: 204px;
+  }
+  .cubes {
+    grid-template-rows: repeat(6, 1fr);
+    width: 100%;
+    height: 1224px;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .cubes {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 408px;
+    height: 612px;
+  }
+}
+@media (min-width: 768px) {
+  .cubes {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 612px;
+    height: 408px;
+  }
+}
