@@ -2,7 +2,7 @@ const BS = require('browser-sync');
 
 const config = {
   server: true,
-  files: "**/*",
+  files: ['build/**/*', 'styles/**/*'],
   open: false,
   ghostMode: {
     clicks: false,
