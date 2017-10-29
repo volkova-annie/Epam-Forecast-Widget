@@ -6,29 +6,75 @@ html, body {
   display: flex;
   font-family: Montserrat, Helvetica, sans-serif;
 }
+
 .widget {
   min-width: 100%;
   min-height: 100%;
+  padding-bottom: 5%;
   background-image: url(../img/background.png);
+  flex-grow: 1;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
+  padding-top: 5%;
 }
 
 #forecast {
-  position: absolute;
-  top: 10%;
+  display: block;
 }
+
+.forecast__input {
+  width: 100%;
+}
+
+.forecast__selection {
+  width: 100%;
+  margin: 3% 0;
+  color:  #b53355;
+  display: flex;
+  justify-content: space-around;
+}
+
+.forecast__selection-item {
+  margin-left: 5px;
+}
+
+.suggestions {
+  color: #b53355;
+  list-style: none;
+  padding-left: 0;
+}
+
+.suggestions__item {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.suggestions__item:hover {
+  color: #000;
+}
+
 .cubes {
-  display: grid;
   color: #ffffff;
   box-shadow: 3px 3px 10px #000000;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.cube__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .cube:nth-child(7n) {
   background-color: #00b4df;
 }
@@ -71,39 +117,18 @@ html, body {
 .cube:nth-child(7n-6) .svg-icon {
   filter: drop-shadow(0 1px 0 rgba(170, 23, 49, 0.75));
 }
-.city {
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  align-items: center;
-}
-.with-info {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+
+.day {
+  color: #ffffff;
+  font-weight: bold;
   text-align: center;
-  justify-items: center;
-}
-.info {
   width: 100%;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-around;
-  font-size: .75em;
-  height: 100%;
+  margin-bottom: 0;
+  margin-top: 29px;
 }
-.daily {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr); ;
-  align-items: center;
-  justify-content: space-between;
-}
-.daily * {
-  margin: 0;
-}
-.daily * + * {
-}
+
 /*styles for icons*/
+
 .svg-sprite {
   display: none;
   overflow: auto;
@@ -113,60 +138,134 @@ html, body {
   overflow: auto;
   fill: #fff;
   fill-rule: evenodd;
+  width: 100px;
+  height: 100px;
 }
-.rain {
-  width: 91px;
-  height: 76px;
-}
-.fog {
-  width: 82px;
-  height: 76px;
-}
-.sun-cloud {
-  width: 88px;
-  height: 76px;
-}
-.sun-snow {
-  width: 89px;
-  height: 90px;
-}
-.thunderstorm {
-  width: 64px;
-  height: 65px;
-}
-.cloud {
-  width: 88px;
-  height: 89px;
-}
-.daily .svg-icon {
-  height: 18px;
-  display: block;
-  width: 100%;
-}
+
 
 @media (max-width: 479px) {
   .widget {
     min-width: 204px;
   }
   .cubes {
-    grid-template-rows: repeat(6, 1fr);
     width: 100%;
-    height: 1224px;
+  }
+  .cube {
+    width: 100%;
+    height: 204px;
+  }
+
+  .widget {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  #forecast {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 @media (min-width: 480px) and (max-width: 767px) {
   .cubes {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
     width: 408px;
-    height: 612px;
   }
+
+  .cube {
+    width: 204px;
+    height: 204px;
+  }
+
+  .widget {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #forecast {
+    width: 408px;
+  }
+
+  /*.forecast__input {
+    width: 408px;
+  }
+
+  .forecast__selection {
+    width: 408px;
+  }*/
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1039px) {
   .cubes {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     width: 612px;
-    height: 408px;
   }
+
+  .cube {
+    width: 204px;
+    height: 204px;
+  }
+
+  .widget {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #forecast {
+    width: 612px;
+  }
+
+  /*.suggestions {
+    color: #b53355;*/
+
+  /*.forecast__input {
+    width: 612px;
+  }
+
+  .forecast__selection {
+    width: 612px;
+  }*/
+}
+@media (min-width: 1040px) {
+  .cubes {
+    width: 612px;
+  }
+
+  .cube {
+    width: 204px;
+    height: 204px;
+  }
+
+  .widget {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 5%;
+  }
+
+  .forecast {
+    width: 30%;
+  }
+
+  .forecast__result {
+    width: 70%;
+    margin-left: 5%;
+  }
+
+  #forecast {
+    width: 300px;
+  }
+
+
+  .suggestions {
+    color: #DCDCDC;
+  }
+
+  .suggestions__item:hover {
+    color: #fff;
+  }
+  /*.forecast__input {
+    width: 300px;
+  }
+
+  .forecast__selection {
+    width: 300px;
+  }*/
 }

@@ -155,7 +155,7 @@ function getSuggestionItem(event) {
 function renderSuggestions(cities) {
   var suggestions = document.querySelector('.js-suggestions');
   var ul = document.createElement('ul');
-
+  ul.className = 'suggestions';
   if (cities.length <= 0 || cities[0] === '') {
     suggestions.innerHTML = '<li>No cities found</li>';
 
@@ -164,7 +164,7 @@ function renderSuggestions(cities) {
 
   cities.forEach(function (el) {
     var li = document.createElement('li');
-    li.className = 'js-suggestions-item';
+    li.className = 'js-suggestions-item suggestions__item';
     li.innerText = el;
     ul.appendChild(li);
   });
@@ -208,7 +208,7 @@ function renderForecast(forecast) {
     var day = weekdays[new Date(el.dt * 1000).getDay()];
     var temp = el.temp.day.toFixed();
     var icon = el.weather[0].icon;
-    var template = '<div class="city">\n        <svg class="svg-icon is-' + icon + '">\n          <use xlink:href="#' + icon + '" />\n        </svg>\n        <span class="day">' + day + ' / ' + temp + '&deg;</p>\n      </div>';
+    var template = '<div class="cube__content">\n        <svg class="svg-icon is-' + icon + '">\n          <use xlink:href="#' + icon + '" />\n        </svg>\n        <span class="day">' + day + ' / ' + temp + '&deg;</p>\n      </div>';
 
     li.innerHTML = template;
     ul.appendChild(li);
