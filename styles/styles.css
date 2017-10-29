@@ -46,10 +46,16 @@ html, body {
   padding-left: 0;
 }
 
-.suggestions__item {
+.suggestions__item, .error {
   padding: 5px 0;
   cursor: pointer;
 }
+
+ .error {
+   color: #b53355;
+   list-style: none;
+   padding: 5px 0;
+ }
 
 .suggestions__item:hover {
   color: #000;
@@ -196,14 +202,6 @@ html, body {
   #forecast {
     width: 408px;
   }
-
-  /*.forecast__input {
-    width: 408px;
-  }
-
-  .forecast__selection {
-    width: 408px;
-  }*/
 }
 @media (min-width: 768px) and (max-width: 1039px) {
   .cubes {
@@ -223,17 +221,6 @@ html, body {
   #forecast {
     width: 612px;
   }
-
-  /*.suggestions {
-    color: #b53355;*/
-
-  /*.forecast__input {
-    width: 612px;
-  }
-
-  .forecast__selection {
-    width: 612px;
-  }*/
 }
 @media (min-width: 1040px) {
   .cubes {
@@ -265,18 +252,11 @@ html, body {
   }
 
 
-  .suggestions {
+  .suggestions, .error, .forecast__selection {
     color: #DCDCDC;
   }
 
   .suggestions__item:hover {
     color: #fff;
   }
-  /*.forecast__input {
-    width: 300px;
-  }
-
-  .forecast__selection {
-    width: 300px;
-  }*/
 }

@@ -88,7 +88,7 @@ function renderSuggestions (cities) {
   const ul = document.createElement('ul');
   ul.className = 'suggestions';
   if (cities.length <= 0 || cities[0] === '') {
-    suggestions.innerHTML = '<li>No cities found</li>';
+    suggestions.innerHTML = '<li class="error">No cities found</li>';
 
     return;
   }
