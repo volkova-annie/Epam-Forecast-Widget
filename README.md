@@ -7,5 +7,5 @@
 
 ### For start
 * yarn install
-* yarn bs
+* yarn dev
 * http://localhost:3000/
