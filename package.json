@@ -2,6 +2,17 @@
   "name": "",
   "version": "",
   "scripts": {
+    "dev": "yarn js:dev & yarn bs",
+    "js:dev": "webpack --config ./webpack.config.js --watch",
+    "js": "webpack --config ./webpack.config.js",
     "bs": "node browser-sync"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "webpack": "^3.8.1"
   }
 }
