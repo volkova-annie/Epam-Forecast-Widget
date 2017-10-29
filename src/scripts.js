@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', start);
 
 function start() {
-  emmitEvent()
-}
+  emmitEvent();
+};
 
 function autocompleteRequest(event) {
-  event.preventDefault()
-  const value = event.target.value
+  event.preventDefault();
+  const value = event.target.value;
   if (value.length > 2) {
-    getSuggestions (value)
+    getSuggestions (value);
   }
-}
+};
 
 function emmitEvent() {
   const input = document.querySelector('.js-input');
@@ -20,11 +20,11 @@ function emmitEvent() {
   counts.forEach(count => {
     count.addEventListener('change', () => {
       if (input.value.length > 2) {
-        getForeCast(input.value)
+        getForeCast(input.value);
       }
     });
-  })
-}
+  });
+};
 
 function httpRequest(url, callback) {
   let httpRequest = false;
@@ -70,16 +70,16 @@ function httpRequest(url, callback) {
 
 
 function getSuggestions(value) {
-  const url = 'http://gd.geobytes.com/AutoCompleteCity?q='+value
+  const url = `http://gd.geobytes.com/AutoCompleteCity?q=${value}`;
 
   httpRequest(url, renderSuggestions);
 }
 
 function getSuggestionItem(event) {
-  const target = event.target
+  const target = event.target;
 
   if (target.nodeName === 'LI') {
-    setSuggestionValue(target.innerText)
+    setSuggestionValue(target.innerText);
   }
 }
 
@@ -88,70 +88,68 @@ function renderSuggestions (cities) {
   const ul = document.createElement('ul');
   ul.className = 'suggestions';
   if (cities.length <= 0 || cities[0] === '') {
-    suggestions.innerHTML = '<li>No cities found</li>'
+    suggestions.innerHTML = '<li>No cities found</li>';
 
-    return
+    return;
   }
 
   cities.forEach((el) => {
     const li = document.createElement('li');
-    li.className = 'js-suggestions-item suggestions__item'
+    li.className = 'js-suggestions-item suggestions__item';
     li.innerText = el;
     ul.appendChild(li);
   });
 
   suggestions.innerHTML = ''
   suggestions.appendChild(ul);
-  suggestions.removeEventListener('click', getSuggestionItem)
-  suggestions.addEventListener('click', getSuggestionItem)
+  suggestions.removeEventListener('click', getSuggestionItem);
+  suggestions.addEventListener('click', getSuggestionItem);
 }
 
 function setSuggestionValue(city) {
   const suggestions = document.querySelector('.js-suggestions');
   const input = suggestions.parentNode.querySelector('input');
 
-  suggestions.innerHTML = ''
-  input.value = city
+  suggestions.innerHTML = '';
+  input.value = city;
 
-  getForeCast(city)
+  getForeCast(city);
 }
 
 function getForeCast(city) {
   const suggestions = document.querySelector('.js-suggestions');
-  const key = 'b84d6e69b39e4433a5ec8239e157c1d5'
+  const key = 'b84d6e69b39e4433a5ec8239e157c1d5';
   const form = suggestions.parentNode;
-  const cnt = form.elements.count.value
-  const url = `//api.openweathermap.org/data/2.5/forecast/daily?appid=${key}&q=${city}&units=metric&cnt=${cnt}`
+  const cnt = form.elements.count.value;
+  const url = `//api.openweathermap.org/data/2.5/forecast/daily?appid=${key}&q=${city}&units=metric&cnt=${cnt}`;
 
   httpRequest(url, renderForecast);
 }
 
 function renderForecast(forecast) {
   const ul = document.createElement('ul');
-  ul.className = 'cubes'
+  ul.className = 'cubes';
   const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const weatherForecast = document.querySelector('.forecast__result');
 
-  const forecastList = forecast.list
+  const forecastList = forecast.list;
   forecastList.forEach((el) => {
     const li = document.createElement('li');
-    li.className = 'js-forecast-item cube'
-    const day = weekdays[new Date(el.dt*1000).getDay()]
+    li.className = 'js-forecast-item cube';
+    const day = weekdays[new Date(el.dt*1000).getDay()];
     const temp = el.temp.day.toFixed();
-    const icon = el.weather[0].icon
+    const icon = el.weather[0].icon;
     const template = `<div class="cube__content">
         <svg class="svg-icon is-${icon}">
           <use xlink:href="#${icon}" />
         </svg>
         <span class="day">${day} / ${temp}&deg;</p>
-      </div>`
+      </div>`;
 
     li.innerHTML = template;
     ul.appendChild(li);
   });
 
-  weatherForecast.innerHTML = ''
+  weatherForecast.innerHTML = '';
   weatherForecast.appendChild(ul);
-
-
 }
