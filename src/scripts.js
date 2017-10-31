@@ -60,7 +60,6 @@ function httpRequest(url, callback) {
       if(httpRequest.status === 200) {
         const response = JSON.parse(httpRequest.responseText);
         callback(response);
-        console.log('hello');
       }
       else {
         console.log('An error occurred during your request: ' +  httpRequest.status + ' ' + httpRequest.statusText);
@@ -125,7 +124,7 @@ function getForeCast(city) {
   const url = `//api.openweathermap.org/data/2.5/forecast/daily?appid=${key}&q=${city}&units=metric&cnt=${cnt}`;
 
   httpRequest(url, renderForecast)
-  
+
   const interval = setInterval(function(){
     return httpRequest(url, renderForecast)
   }, 600000);
